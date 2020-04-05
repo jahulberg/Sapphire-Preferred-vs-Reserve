@@ -1,0 +1,46 @@
+#travel and dining monthly
+t_d_m = int(input("how much do you spend in the average month on travel and dining: "))
+
+#travel and dining yearly
+t_d = t_d_m * 12
+
+#I had an idea to include sign up bonuses here but don't know how to go about it
+reserve_sub = 750
+prefer_sub = 750
+
+reserve_rewards = .03 * t_d
+prefer_rewards = .02 * t_d
+
+#If one redeems chase ultimate rewards points through the travel portal they're worth more *See multipliers below*
+
+portaled_reserve_rewards = 1.5 * reserve_rewards
+portaled_prefer_rewards = 1.25 * prefer_rewards
+effective_reserve = portaled_reserve_rewards - 150
+
+effective_prefer = portaled_prefer_rewards - 95
+
+dif = effective_reserve - effective_prefer
+
+print("Reserve rewards redeemed normally =", reserve_rewards)
+print()
+print("Preferred rewards redeemed normally =", prefer_rewards)
+print()
+
+print("If redeemed through the portal, reserve rewards will be", portaled_reserve_rewards)
+print()
+print("Likewise, preferred rewards will be", portaled_prefer_rewards)
+print()
+print()
+print()
+
+print("However, taking into account the annual fees, our effective reserve rewards will be", effective_reserve, "and the effective preffered will be", effective_prefer)
+print()
+print()
+if dif > 0:
+    print("The Sapphire reserve wins by", dif)
+    print()
+    print("Your total annual rewards will be", effective_reserve)
+else:
+    print("The Sapphire preferred wins by", abs(dif))
+    print()
+    print("Your total annual rewards will be", effective_prefer)
